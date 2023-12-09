@@ -1,0 +1,168 @@
+#header{
+    width: 100vw;
+    display: flex;
+    flex-wrap: wrap;
+    height: 75px;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    cursor: pointer;
+}
+
+.circle {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f6f2;
+    border-radius: 50%;
+    box-shadow: 0 0 0.2rem rgba(0, 0, 0, .5);
+    color: #000;
+    font-size: .8rem;
+    height: 2rem;
+    width: 2rem;
+    margin-right: 5px;
+}
+
+.circle>div {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f6f2;
+    border-radius: 50%;
+}
+.circle>div:first-child{
+    color: gray;
+}
+.circle>div>span {
+    font-size: 6px;
+    background-color: #f8f6f2;
+}
+
+.logo>p {
+    font-weight: 500;
+    color: #000;
+    font-size: 2rem;
+}
+.logo>p:hover{ 
+    color: #9d3615;
+}
+
+.blank1 {
+    width: 10%;
+}
+
+/* links */
+.links{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 55%;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+.links>p>a{
+    color: #000;
+    text-decoration: none;
+}
+.blank2{
+    width: 12%;
+}
+.cart{
+    width: 5%;
+    background-color: #f8f6f2;
+    width: 50px;
+    height: 50px;
+    border-radius:50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cart>a>svg{   
+    font-weight: 600;
+    width: 50%;
+    color: #000;
+}
+.links>p>a:hover{ 
+    color: #9d3615;
+}
+#burger{
+    width: 0px;
+}
+@media (width <= 980px) {
+   .blank1,.blank2,.links{
+    display: none;
+   }
+   #header{
+    justify-content: space-around;
+   }
+   .logo {
+    display: flex;
+    justify-content: flex-start;
+    width: 40%;
+   }
+   .cart{
+    width: 5%;
+   }
+   #burger{
+    width: 5%;
+   }
+}
+@media (width <= 480px) {
+    .circle {
+        width: 30px;
+        height: 30px;
+    }
+    .cart{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+/* side */
+/* The side navigation menu */
+.sidenav {
+    height: 100%; /* 100% Full-height */
+    width: 0; /* 0 width - change this with JavaScript */
+    position: fixed; /* Stay in place */
+    z-index: 6; /* Stay on top */
+    top: 0; /* Stay at the top */
+    right: 0;
+    background-color: #f8d4bd; /* Black*/
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 60px; /* Place content 60px from the top */
+    transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+  }
+  
+  /* The navigation menu links */
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;  
+    color: #000;
+    display: block;
+    transition: 0.3s;
+    font-size: 1.8rem;
+    font-weight: 700;
+  }
+  
+  /* When you mouse over the navigation links, change their color */
+  .sidenav a:hover {
+    color: #9d3615;
+  }
+  
+  /* Position and style the close button (top right corner) */
+  .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+  }
+  

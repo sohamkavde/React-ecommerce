@@ -1,0 +1,17 @@
+.related{
+    /* position: relative; */
+    display: flex;
+}
+
+.subRelated{
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-around; */
+    /* position: absolute;
+    z-index: 3;
+    top: 40%; */
+    width: 100%;
+}
+
+
+/* new */

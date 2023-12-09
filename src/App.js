@@ -1,24 +1,41 @@
-import logo from './logo.svg';
 import './App.css';
+import Cart from './component/Cart/Cart';
+import Shop from './component/Shop/Shop';
+import Blog from './component/blog/blog';
+import Header from './component/header/header';
+import RelatedProductsList from './component/home/backgroundTitleImage/RelatedProductsList/RelatedProductsList';
+import BackgroundTitleImage from './component/home/backgroundTitleImage/backgroundTitleImage';
+import Login from './component/login/login';
+import Reg from './component/login/reg';
+import Contact from './component/Contact/Contact';
+import { BrowserRouter,Routes,Route,Outlet } from 'react-router-dom';
+import Myaccount from './component/Myaccount/Myaccount';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+   {/* <Header/> */}
+   {/* <BackgroundTitleImage/> */}
+   {/* <RelatedProductsList/> */}
+   {/* <Login/> */}
+   {/* <Reg/> */}
+   {/* <Blog/> */}
+
+   <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Header/>}>
+          <Route index element={<BackgroundTitleImage/>}/>
+          <Route path='/Login' element={<Login/>}/>
+          <Route path='/Shop' element={<Shop/>}/>
+          <Route path='/Contact' element={<Contact/>}/>
+          <Route path='/Cart' element={<Cart/>}/>
+          <Route path='/Blog' element={<Blog/>}/>
+          <Route path='/Reg' element={<Reg/>}/>
+          <Route path='/Myaccount' element={<Myaccount/>}/>
+        </Route>
+      </Routes>
+   </BrowserRouter>
+   </>
   );
 }
 

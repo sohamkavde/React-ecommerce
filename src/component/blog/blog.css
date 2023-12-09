@@ -1,0 +1,13 @@
+#blog{
+    /* width: 95%; */
+    /* position: absolute;
+    top: 40%; */
+    /* z-index: 3; */
+    /* display: flex; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.one{
+    /* width: 100% !important; */
+}
