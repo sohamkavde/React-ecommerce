@@ -18,11 +18,12 @@ function CartProduct({id,title,src,price,freq,increament,decreament}) {
         <div className="cartButton">
             <div className="cartCircle" onClick={()=>{decreament(id-1)}}><span>-</span></div>
             <div className="cartValue"><span>{freq}</span></div>
+       
             <div className="cartCircle" onClick={()=>{increament(id-1)}}><span>+</span></div>
 
         </div>
         <div className="cartPrice">
-            <p>${price}</p>
+            <p>₹ {price}</p>
         </div>
       </div>   
       <hr />

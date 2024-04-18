@@ -27,6 +27,7 @@ function App() {
           <Route index element={<BackgroundTitleImage/>}/>
           <Route path='/Login' element={<Login/>}/>
           <Route path='/Shop' element={<Shop/>}/>
+          <Route path='/Shop/:id' element={<Shop/>}/>
           <Route path='/Contact' element={<Contact/>}/>
           <Route path='/Cart' element={<Cart/>}/>
           <Route path='/Blog' element={<Blog/>}/>

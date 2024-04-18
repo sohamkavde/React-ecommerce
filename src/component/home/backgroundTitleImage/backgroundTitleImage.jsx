@@ -64,11 +64,9 @@ function BackgroundTitleImage() {
         <div className="listedProduct">
            <div className='sublist'>
             {
-              trav.map((item)=>{
-                  return(
-                    <>
-                    <Background id={item.id} src={item.img} price={item.price}/>                    
-                    </>
+              trav.map((item,index)=>{
+                  return(                    
+                    <Background id={item.id} src={item.img} price={item.price} index={index} key={index}/>                    
                   )
               })
             }
@@ -78,17 +76,17 @@ function BackgroundTitleImage() {
            <p className='relatedlist'>Related Products</p>
            <div className='sublist'>
            {
-              trav.map((item)=>{
+              trav.map((item,index)=>{
                   return(
-                    <>
-                    <Background id={item.id} src={item.img} price={item.price}/>                    
-                    </>
+                  
+                    <Background id={item.id} src={item.img} price={item.price} index={index} key={index}/>                    
+                  
                   )
               })
             }
            </div>             
             
-   <footer style={{marginTop:"20px"}} class="footer"><p>Copyright <span>©</span> 2021 | All Rights Reserved.</p></footer>
+   <footer style={{marginTop:"20px"}} className="footer"><p>Copyright <span>©</span> 2021 | All Rights Reserved.</p></footer>
         </div>
         
       

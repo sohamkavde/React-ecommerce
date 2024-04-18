@@ -75,10 +75,12 @@
     width: 12%;
 }
 .cart{
-    width: 5%;
+    width: 50%;
+    height: 50%;
+    max-width: 50px;
+    max-height: 50px;
+    border-radius: 50%;
     background-color: #f8f6f2;
-    width: 50px;
-    height: 50px;
     border-radius:50%;
     display: flex;
     justify-content: center;
@@ -108,9 +110,9 @@
     justify-content: flex-start;
     width: 40%;
    }
-   .cart{
+   /* .cart{
     width: 5%;
-   }
+   } */
    #burger{
     width: 5%;
    }
@@ -120,10 +122,10 @@
         width: 30px;
         height: 30px;
     }
-    .cart{
+    /* .cart{
         width: 50px;
         height: 50px;
-    }
+    } */
 }
 
 /* side */

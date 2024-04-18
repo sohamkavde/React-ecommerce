@@ -26,21 +26,21 @@ function Myaccount() {
     <div className='myaccount-main'>
       <div className="myaccount">
         <div className="first-myaccount">
-                <form action="#">
+                <form>
                     <b>Update Password</b>                   
                     <p>Old Password</p>
-                    <input type="password" name="pass" ref={opass} id="pass" autoComplete='off'/>
+                    <input type="password"  ref={opass}  autoComplete='off'/>
 
                     <p>Password</p>
-                    <input type="password" name="pass" ref={pass} id="pass" autoComplete='off'/>
+                    <input type="password"  ref={pass}  autoComplete='off'/>
 
                     <p>Confirm Password</p>
-                    <input type="password" name="pass" ref={cpass} id="pass" autoComplete='off'/>
+                    <input type="password"  ref={cpass}  autoComplete='off'/>
                     <button className="loginButton" type="button" onClick={up}>Update</button>
                 </form>
 
         </div>
-        <div className="second-myaccount"></div>
+        {/* <div className="second-myaccount"></div> */}
       </div>
     </div>
   )

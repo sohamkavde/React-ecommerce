@@ -46,11 +46,9 @@ function RelatedProductsList() {
         <div className="related">
             <div className="subRelated">
             {
-              trav.map((item)=>{
+              trav.map((item,index)=>{
                   return(
-                    <>
-                    <Background id={item.id} src={item.img} price={item.price}/>                    
-                    </>
+                    <Background id={item.id} src={item.img} price={item.price} key={index} index={index}/>                    
                   )
               })
             }

@@ -192,10 +192,13 @@
     width: 150px;
    margin-top: -15px;
 }
+.ProductParentDivToCenterImage{
+    display: flex;
+    justify-content: center;
+}
 .productImage{
     width: 250px;
-    transform: rotate(-50deg);
-    /* background-color: #2a85cb; */
+    transform: rotate(-50deg);   
 }
 .productImage>img{
     width: 100%;
