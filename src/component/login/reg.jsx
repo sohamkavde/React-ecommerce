@@ -2,6 +2,10 @@ import {React,useRef} from 'react';
 import './login.css';
 import axios from 'axios';
 
+// const url = 'https://dbforecommerce.onrender.com/signup' || 'http://localhost:8000/signup';
+const url = 'dbforecommerce-production.up.railway.app' || 'http://localhost:8000/signup';
+
+console.log(url);
 function Reg() {
   // I have implemented nodejs,express,mongodb later hence
   // I am using localstorage because whole logic is working on localstorage
@@ -24,7 +28,8 @@ function Reg() {
   
     if(pass.current.value === cpass.current.value){
       
-    let data = await axios.post('http://localhost:8000/signup',ObjectData);
+    let data = await axios.post(url,ObjectData);
+
     if(!data.data.message && data.status === 200){
       // localstorage start
       ele["email"] = email.current.value;

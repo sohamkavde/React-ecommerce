@@ -3,14 +3,15 @@ import './login.css';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { change } from '../store/reducer';
+const url = 'https://dbforecommerce.onrender.com/login/' || 'http://localhost:8000/login/';
 
 function Login() {
   const dispatch = useDispatch();
   const email = useRef();
   const pass = useRef();
   const log = async () => {
-
-    let data = await axios.get('http://localhost:8000/login/' + email.current.value);
+    console.log(url);
+    let data = await axios.get(url + email.current.value);
     let res = await data.data[0];
     if (data.status === 200) {
 
