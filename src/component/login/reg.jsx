@@ -2,8 +2,8 @@ import {React,useRef} from 'react';
 import './login.css';
 import axios from 'axios';
 
-// const url = 'https://dbforecommerce.onrender.com/signup' || 'http://localhost:8000/signup';
-const url = 'dbforecommerce-production.up.railway.app' || 'http://localhost:8000/signup';
+const url = 'https://dbforecommerce.onrender.com/signup' || 'http://localhost:8000/signup';
+// const url = 'https://dbforecommerce-production.up.railway.app/signup' || 'http://localhost:8000/signup';
 
 console.log(url);
 function Reg() {
