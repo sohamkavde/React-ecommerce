@@ -2,12 +2,13 @@ import React, { useState } from 'react'
 import Background from '../backgound-component/background';
 import './related.css';
 import '../backgroundTitleImage.css';
-import UserContext from '../../../UserContext/UserContext';
 
-import Image1 from '../../../img/shoe1.png';
-import Image2 from '../../../img/shoe2.png';
-import Image3 from '../../../img/shoe3.png';
-import Image4 from '../../../img/shoe4.png';
+import Image1 from '../../../../assets/img/shoe1.png';
+import Image2 from '../../../../assets/img/shoe2.png';
+import Image3 from '../../../../assets/img/shoe3.png';
+import Image4 from '../../../../assets/img/shoe4.png';
+
+
 const arr = [
   {
     id:1,

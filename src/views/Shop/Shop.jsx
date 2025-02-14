@@ -1,12 +1,22 @@
 import React, { useState } from 'react';
-import '../home/backgroundTitleImage/backgroundTitleImage.css';
-import Image1 from '../img/shoe1.png';
-import Image2 from '../img/shoe2.png';
-import Image3 from '../img/shoe3.png';
-import Image4 from '../img/shoe4.png';
+import Image1 from '../../assets/img/shoe1.png';
+import Image2 from '../../assets/img/shoe2.png';
+import Image3 from '../../assets/img/shoe3.png';
+import Image4 from '../../assets/img/shoe4.png';
+
+
+
+// Need to fix this component
+// import '../home/backgroundTitleImage/backgroundTitleImage.css';
+import '../home/backgroundTitleImage/backgroundTitleImage';
 import Background from '../home/backgroundTitleImage/backgound-component/background';
-import './shop.css';
+
+
+
+
+import '../../css/Shop.css';
 import { useNavigate, useParams } from 'react-router-dom';
+
 
 function Shop() {
   let {id} = new useParams();

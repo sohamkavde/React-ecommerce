@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
-import './login.css';
+import '../../css/Login.css';
 import axios from 'axios';
 import { useDispatch } from 'react-redux';
 import { change } from '../store/reducer';
+import { useNavigate } from 'react-router-dom';
 const url = 'https://dbforecommerce.onrender.com/login/' || 'http://localhost:8000/login/';
-
 function Login() {
+  const navigation = useNavigate();
   const dispatch = useDispatch();
   const email = useRef();
   const pass = useRef();
@@ -31,11 +32,16 @@ function Login() {
       localStorage.setItem("Store", JSON.stringify(ele));
       email.current.value = "";
       pass.current.value = "";
-
-
+      navigation('../');
     } else {
       alert('Not matching');
     }
+  }
+
+  function Guest(){
+    email.current.value = 'test@gmail.com';
+    pass.current.value = 'Test@123';
+    log(); 
   }
   return (
     <div>
@@ -48,6 +54,8 @@ function Login() {
             <p>Password</p>
             <input type="password" name="pass" ref={pass} id="pass" autoComplete='off' />
             <button className="loginButton" type="button" onClick={log}>Login</button>
+            <button className="loginButton" type="button" onClick={Guest}>Guest Login</button>
+
           </form>
         </div>
       </div>
@@ -56,4 +64,4 @@ function Login() {
   )
 }
 
-export default Login;
+export default Login;  

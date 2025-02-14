@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './cart.css';
+import '../../css/Cart.css';
 import CartProduct from './cartProduct/cartProduct';
-import Image1 from '../img/shoe1.png';
-import Image2 from '../img/shoe2.png';
-import Image3 from '../img/shoe3.png';
-import Image4 from '../img/shoe4.png';
+import Image1 from '../../assets/img/shoe1.png';
+import Image2 from '../../assets/img/shoe2.png';
+import Image3 from '../../assets/img/shoe3.png';
+import Image4 from '../../assets/img/shoe4.png';
 import { useNavigate } from 'react-router-dom';
 
 const arr = [

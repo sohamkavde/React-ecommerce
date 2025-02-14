@@ -1,6 +1,5 @@
 import React from 'react'
 import './cartProduct.css';
-import Image from '../../img/shoe1.png';
 
 function CartProduct({id,title,src,price,freq,increament,decreament}) {
   

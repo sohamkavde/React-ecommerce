@@ -1,27 +1,21 @@
 import './App.css';
-import Cart from './component/Cart/Cart';
-import Shop from './component/Shop/Shop';
-import Blog from './component/blog/blog';
-import Header from './component/header/header';
-import RelatedProductsList from './component/home/backgroundTitleImage/RelatedProductsList/RelatedProductsList';
-import BackgroundTitleImage from './component/home/backgroundTitleImage/backgroundTitleImage';
-import Login from './component/login/login';
-import Reg from './component/login/reg';
-import Contact from './component/Contact/Contact';
 import { BrowserRouter,Routes,Route,Outlet } from 'react-router-dom';
-import Myaccount from './component/Myaccount/Myaccount';
+
+// ------------------
+import Header from './views/Layout/Header';
+import Login from './views/LogReg/Login';
+import Reg from './views/LogReg/Registration';
+import Shop from './views/Shop/Shop';
+import Myaccount from './views/Myaccount/Myaccount';
+import Contact from './views/Contact/Contact';
+import Blog from './views/Blog/Blog';
+import Cart from './views/Cart/Cart';
+import BackgroundTitleImage from './views/home/backgroundTitleImage/backgroundTitleImage';
 
 function App() {
   return (
    <>
-   {/* <Header/> */}
-   {/* <BackgroundTitleImage/> */}
-   {/* <RelatedProductsList/> */}
-   {/* <Login/> */}
-   {/* <Reg/> */}
-   {/* <Blog/> */}
-
-   <BrowserRouter>
+     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Header/>}>
           <Route index element={<BackgroundTitleImage/>}/>

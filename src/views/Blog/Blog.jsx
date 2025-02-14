@@ -1,6 +1,6 @@
 import {React,useState} from 'react';
-import UserContext from '../UserContext/UserContext'
-import './blog.css';
+import UserContext from '../../views/UserContext/UserContext'
+import '../../css/Blog.css';
 import RelatedProductsList from '../home/backgroundTitleImage/RelatedProductsList/RelatedProductsList';
 
 

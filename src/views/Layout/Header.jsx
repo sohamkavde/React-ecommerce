@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './header.css';
+import '../../css/Header.css';
 import { Link, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -65,7 +65,7 @@ function Header() {
             <div><span>■</span></div>
 
           </div>
-          <p>shophub</p>
+          <p>E-com</p>
         </div>
         <div className="blank1"></div>
         <div className="links">

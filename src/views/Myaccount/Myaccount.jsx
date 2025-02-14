@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import './Myaccount.css';
+import '../../css/Myaccount.css';
 function Myaccount() {
     const opass = useRef();
     const pass = useRef();
