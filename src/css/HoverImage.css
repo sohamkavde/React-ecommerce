@@ -1,0 +1,32 @@
+.product-container {
+    position: relative;
+    width: 30%;
+    background-color: #ccc;
+}
+
+.product-image {
+    margin-top: 100px;
+    width: 100%;
+    cursor: crosshair;
+}
+
+.zoom-container {
+    display: block;
+    /* position: absolute; */
+    /* top: 0; */
+    /* left: 100%; */
+    padding: 10%;
+    width:70%;
+    height: 100%;
+    overflow: hidden;
+    border: 2px solid #ccc;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.zoomed-image {
+    /* position: absolute; */
+    width: 70%; /* Bigger image size */
+    height: auto;
+    transition: transform 0.1s ease-out;
+}

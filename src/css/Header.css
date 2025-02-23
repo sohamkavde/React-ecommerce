@@ -87,16 +87,16 @@
     align-items: center;
     text-align: center;
 }
-.cart>a>svg{   
+.cartIcon{   
     font-weight: 600;
-    width: 50%;
+    width: 100%;
     color: #000;
 }
 .links>p>a:hover{ 
     color: #9d3615;
 }
 #burger{
-    width: 0px;
+    display: none;
 }
 @media (width <= 980px) {
    .blank1,.blank2,.links{
@@ -114,6 +114,7 @@
     width: 5%;
    } */
    #burger{
+    display: block;
     width: 5%;
    }
 }

@@ -4,6 +4,8 @@ import { Link, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import { change } from '../store/reducer';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faCartShopping,faBars} from '@fortawesome/free-solid-svg-icons'
 function Header() {
  
   const valbool = useSelector(state=>state.login.value);
@@ -24,17 +26,22 @@ function Header() {
   useEffect(() => {
     if (localStorage.getItem("Store")) {
       const ele = JSON.parse(localStorage.getItem("Store"));
+      if(ele['token'] === ''){
+        ele['check'] = false;
+      }
       setOut(ele['check']);      
     }
+
   });
 
   const logout = () => {
     const ele = JSON.parse(localStorage.getItem("Store"));
     ele['check'] = false;
-    ele['email'] = "";
+    ele['token'] = "";
     setOut(ele['check']);
     dispatch(change());
     localStorage.setItem("Store", JSON.stringify(ele));
+
   }
   return (
     <div>
@@ -89,14 +96,13 @@ function Header() {
         {out ?
         <div className="cart">
           <Link to="/Cart">
-            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="shopping-bag" className="svg-inline--fa fa-shopping-bag fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M352 160v-32C352 57.42 294.579 0 224 0 153.42 0 96 57.42 96 128v32H0v272c0 44.183 35.817 80 80 80h288c44.183 0 80-35.817 80-80V160h-96zm-192-32c0-35.29 28.71-64 64-64s64 28.71 64 64v32H160v-32zm160 120c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm-192 0c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24z"></path></svg>
-
+          <FontAwesomeIcon icon={faCartShopping} className="cartIcon"/>
           </Link>
         </div>
           :""
           }
         <div id='burger' onClick={openNav}>
-          <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" className="svg-inline--fa fa-bars fa-w-14 " role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
+        <FontAwesomeIcon icon={faBars} />
         </div>
 
       </div>

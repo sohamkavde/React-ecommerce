@@ -6,6 +6,7 @@ import Image4 from '../../assets/img/shoe4.png';
 
 
 
+
 // Need to fix this component
 // import '../home/backgroundTitleImage/backgroundTitleImage.css';
 import '../home/backgroundTitleImage/backgroundTitleImage';
@@ -16,6 +17,7 @@ import Background from '../home/backgroundTitleImage/backgound-component/backgro
 
 import '../../css/Shop.css';
 import { useNavigate, useParams } from 'react-router-dom';
+import HoverZoom from './HoverImage';
 
 
 function Shop() {
@@ -74,6 +76,9 @@ function Shop() {
   const [trav, Settrav] = useState(arr);
 
   return (
+    <>
+     
+   
     <div className='backgroundTitleImage'>
       <div className="products">
         <div className="repel">
@@ -120,6 +125,7 @@ function Shop() {
         </footer>
       </div>
     </div>
+    </>
   );
 }
 

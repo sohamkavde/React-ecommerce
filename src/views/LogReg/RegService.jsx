@@ -1,6 +1,8 @@
 import axios from "axios";
 
-const url = "https://dbforecommerce.onrender.com/signup" || "http://localhost:8000/signup";
+// const url = "https://dbforecommerce.onrender.com/signup" || "http://localhost:8000/signup";
+const url = 'http://localhost:8000/'+'signup' ||process.env.REACT_APP_DBURL+'signup' ;
+  
 
 export const validateEmailFormat = (email) => {
   return {

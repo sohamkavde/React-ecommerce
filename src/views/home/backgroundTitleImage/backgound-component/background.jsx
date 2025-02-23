@@ -1,8 +1,19 @@
-import { useContext } from 'react'
-import { useNavigate }   from "react-router-dom";
+import { useContext, useState } from 'react'
+import { Link, useNavigate }   from "react-router-dom";
 import Image from '../shoe1.png';
 import UserContext from '../../../UserContext/UserContext';
+
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
+import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
+
+
+
+
 function Background({id,src,price,index}) {
+  const [hostname,setHostName] = useState(window.location.hostname);
+  
   const navigator = useNavigate();
   const val = useContext(UserContext);
   const run = (val) => {
@@ -41,7 +52,11 @@ function Background({id,src,price,index}) {
         <img src={src} alt="" />
       </div>
       </div>
-      <div className="product-name"><p>Nike Air Force 1</p> <span>{price}</span> </div>
+      <div className="product-name">
+        <p>Nike Air Force 1</p> 
+      <div style={{width:'100%',display:'flex',justifyContent:'space-around'}}><span><FontAwesomeIcon icon={faIndianRupeeSign} />{price}</span>
+      <Link to={"https://wa.me/?text=Check%20out%20this%20amazing%shoes!%20 https://"+hostname+'/shop/'+index}> <FontAwesomeIcon icon={faWhatsapp} style={{color:'green'}}/></Link></div>
+       </div>
     </div>
   )
 }
