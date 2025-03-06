@@ -1,11 +1,5 @@
-import React, { useState } from 'react';
-import Image1 from '../../assets/img/shoe1.png';
-import Image2 from '../../assets/img/shoe2.png';
-import Image3 from '../../assets/img/shoe3.png';
-import Image4 from '../../assets/img/shoe4.png';
-
-
-
+import React, { useState } from 'react'; 
+ 
 
 // Need to fix this component
 // import '../home/backgroundTitleImage/backgroundTitleImage.css';
@@ -18,11 +12,17 @@ import Background from '../home/backgroundTitleImage/backgound-component/backgro
 import '../../css/Shop.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import HoverZoom from './HoverImage';
+import useFetchProductDetails from '../../models/DataFetch/FetchProductDetails';
 
 
 function Shop() {
   let {id} = new useParams();
-  if(!id){
+  const arr =  useFetchProductDetails();
+  if(!id ){    
+    id=1;
+  }
+  if(arr.length < id){
+    alert('Do not change URL');
     id=1;
   }
   const navigator = useNavigate();
@@ -46,32 +46,6 @@ function Shop() {
     }
   };
 
-  const arr = [
-    {
-      id: 1,
-      title: "Nike Air Force 1",
-      price: 250,
-      img: Image1
-    },
-    {
-      id: 2,
-      title: "Nike Air Force 1",
-      price: 450,
-      img: Image2
-    },
-    {
-      id: 3,
-      title: "Nike Air Force 1",
-      price: 550,
-      img: Image3
-    },
-    {
-      id: 4,
-      title: "Nike Air Force 1",
-      price: 550,
-      img: Image4
-    }
-  ];
 
   const [trav, Settrav] = useState(arr);
 
@@ -101,7 +75,7 @@ function Shop() {
             <div className="wrapper">
               <div className='desctitle'>
                 <p>{trav[id-1].title}</p>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, placeat maxime sapiente impedit</p>
+                <p  dangerouslySetInnerHTML={{ __html: trav[id-1].description }}></p>
                 <button onClick={() => { run(id) }}>Add To Cart</button>
               </div>
               <div className='descimg'>
