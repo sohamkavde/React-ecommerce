@@ -62,23 +62,43 @@ function Cart() {
       ele[x[i].id]++;
       localStorage.setItem("item", JSON.stringify(ele));
       SetTotal(total + x[i].price);
-    } else {
+    }    
+    else {
       alert('You can add 10 copy only');
     }
   };
-
   const decreament = (i) => {
-    let x = [...trav];
-    x[i].freq--;
-    Settrav(x);
-    let ele = JSON.parse(localStorage.getItem('item'));
-    ele[x[i].id]--;
-    if (x[i].freq === 0) {
-      delete ele[x[i].id];
+    let x = [...trav]; // Copy state array
+    let ele = JSON.parse(localStorage.getItem('item')) || {}; // Get stored items
+  
+    if (x[i].freq > 1) {
+      x[i] = { ...x[i], freq: x[i].freq - 1 }; // Correct way to update state
+      Settrav(x);
+  
+      if (ele[x[i].id]) {
+        ele[x[i].id]--; // Decrease quantity in localStorage
+        if (ele[x[i].id] === 0) {
+          delete ele[x[i].id]; // Remove item if quantity is 0
+        }
+      }
+  
+      SetTotal(total - x[i].price);
+    } else {
+      if (window.confirm("Do you want to delete this product?")) {
+        const updatedTrav = x.filter((_, index) => index !== i); // Remove item at index
+  
+        if (ele[x[i].id]) {
+          delete ele[x[i].id]; // Delete item from localStorage
+        }
+  
+        Settrav(updatedTrav);
+        SetTotal(total - x[i].price);
+      }
     }
-    localStorage.setItem("item", JSON.stringify(ele));
-    SetTotal(total - x[i].price);
+  
+    localStorage.setItem("item", JSON.stringify(ele)); // Update localStorage
   };
+  
 
   const generateBill = () => {
     setBillOpen(true);
